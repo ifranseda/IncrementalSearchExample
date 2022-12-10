@@ -9,13 +9,26 @@
 /* Begin PBXBuildFile section */
 		019FD0832944BC64009DB7BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0822944BC64009DB7BF /* AppDelegate.swift */; };
 		019FD0852944BC64009DB7BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0842944BC64009DB7BF /* SceneDelegate.swift */; };
-		019FD0872944BC64009DB7BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0862944BC64009DB7BF /* ViewController.swift */; };
+		019FD0872944BC64009DB7BF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0862944BC64009DB7BF /* SearchViewController.swift */; };
 		019FD08A2944BC64009DB7BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019FD0882944BC64009DB7BF /* Main.storyboard */; };
 		019FD08C2944BC65009DB7BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019FD08B2944BC65009DB7BF /* Assets.xcassets */; };
 		019FD08F2944BC65009DB7BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019FD08D2944BC65009DB7BF /* LaunchScreen.storyboard */; };
 		019FD09A2944BC65009DB7BF /* IncrementalSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0992944BC65009DB7BF /* IncrementalSearchTests.swift */; };
 		019FD0A42944BC65009DB7BF /* IncrementalSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0A32944BC65009DB7BF /* IncrementalSearchUITests.swift */; };
 		019FD0A62944BC65009DB7BF /* IncrementalSearchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0A52944BC65009DB7BF /* IncrementalSearchUITestsLaunchTests.swift */; };
+		019FD0BB2944C468009DB7BF /* SearchViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0BA2944C468009DB7BF /* SearchViewAdapter.swift */; };
+		019FD0BD2944C56C009DB7BF /* SearchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0BC2944C56C009DB7BF /* SearchState.swift */; };
+		019FD0BF2944D876009DB7BF /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0BE2944D876009DB7BF /* Repository.swift */; };
+		019FD0C12944DB24009DB7BF /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0C02944DB24009DB7BF /* SearchViewModel.swift */; };
+		019FD0C32944DB62009DB7BF /* GitHubSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0C22944DB62009DB7BF /* GitHubSearchRepository.swift */; };
+		019FD0C52944DDEB009DB7BF /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0C42944DDEB009DB7BF /* GitHubService.swift */; };
+		019FD0C82944DE4A009DB7BF /* GitHubSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0C72944DE4A009DB7BF /* GitHubSearchAPI.swift */; };
+		019FD0CA2944DE5B009DB7BF /* BackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0C92944DE5B009DB7BF /* BackendService.swift */; };
+		019FD0CC2944E17E009DB7BF /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0CB2944E17E009DB7BF /* Environment.swift */; };
+		019FD0CE2944E270009DB7BF /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0CD2944E270009DB7BF /* Request.swift */; };
+		019FD0D02944E27D009DB7BF /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0CF2944E27D009DB7BF /* Response.swift */; };
+		019FD0D22944E5FF009DB7BF /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0D12944E5FF009DB7BF /* Operation.swift */; };
+		019FD0D42944F7C1009DB7BF /* RepositoryContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0D32944F7C1009DB7BF /* RepositoryContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +52,7 @@
 		019FD07F2944BC64009DB7BF /* IncrementalSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IncrementalSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		019FD0822944BC64009DB7BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		019FD0842944BC64009DB7BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		019FD0862944BC64009DB7BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		019FD0862944BC64009DB7BF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		019FD0892944BC64009DB7BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		019FD08B2944BC65009DB7BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		019FD08E2944BC65009DB7BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +62,19 @@
 		019FD09F2944BC65009DB7BF /* IncrementalSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IncrementalSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		019FD0A32944BC65009DB7BF /* IncrementalSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncrementalSearchUITests.swift; sourceTree = "<group>"; };
 		019FD0A52944BC65009DB7BF /* IncrementalSearchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncrementalSearchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		019FD0BA2944C468009DB7BF /* SearchViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewAdapter.swift; sourceTree = "<group>"; };
+		019FD0BC2944C56C009DB7BF /* SearchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchState.swift; sourceTree = "<group>"; };
+		019FD0BE2944D876009DB7BF /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		019FD0C02944DB24009DB7BF /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		019FD0C22944DB62009DB7BF /* GitHubSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchRepository.swift; sourceTree = "<group>"; };
+		019FD0C42944DDEB009DB7BF /* GitHubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubService.swift; sourceTree = "<group>"; };
+		019FD0C72944DE4A009DB7BF /* GitHubSearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchAPI.swift; sourceTree = "<group>"; };
+		019FD0C92944DE5B009DB7BF /* BackendService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendService.swift; sourceTree = "<group>"; };
+		019FD0CB2944E17E009DB7BF /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		019FD0CD2944E270009DB7BF /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		019FD0CF2944E27D009DB7BF /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		019FD0D12944E5FF009DB7BF /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		019FD0D32944F7C1009DB7BF /* RepositoryContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +125,14 @@
 		019FD0812944BC64009DB7BF /* IncrementalSearch */ = {
 			isa = PBXGroup;
 			children = (
+				019FD0902944BC65009DB7BF /* Info.plist */,
 				019FD0822944BC64009DB7BF /* AppDelegate.swift */,
 				019FD0842944BC64009DB7BF /* SceneDelegate.swift */,
-				019FD0862944BC64009DB7BF /* ViewController.swift */,
-				019FD0882944BC64009DB7BF /* Main.storyboard */,
 				019FD08B2944BC65009DB7BF /* Assets.xcassets */,
+				019FD0B32944BCB9009DB7BF /* App */,
+				019FD0B62944BCF5009DB7BF /* Data */,
 				019FD08D2944BC65009DB7BF /* LaunchScreen.storyboard */,
-				019FD0902944BC65009DB7BF /* Info.plist */,
+				019FD0882944BC64009DB7BF /* Main.storyboard */,
 			);
 			path = IncrementalSearch;
 			sourceTree = "<group>";
@@ -125,6 +152,82 @@
 				019FD0A52944BC65009DB7BF /* IncrementalSearchUITestsLaunchTests.swift */,
 			);
 			path = IncrementalSearchUITests;
+			sourceTree = "<group>";
+		};
+		019FD0B32944BCB9009DB7BF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				019FD0B42944BCCC009DB7BF /* Screens */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		019FD0B42944BCCC009DB7BF /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				019FD0B52944BCDE009DB7BF /* Search */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		019FD0B52944BCDE009DB7BF /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				019FD0862944BC64009DB7BF /* SearchViewController.swift */,
+				019FD0BA2944C468009DB7BF /* SearchViewAdapter.swift */,
+				019FD0BC2944C56C009DB7BF /* SearchState.swift */,
+				019FD0C02944DB24009DB7BF /* SearchViewModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		019FD0B62944BCF5009DB7BF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				019FD0C62944DE23009DB7BF /* API */,
+				019FD0B72944BD30009DB7BF /* Model */,
+				019FD0B82944BD36009DB7BF /* Repositories */,
+				019FD0B92944BD3E009DB7BF /* Services */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		019FD0B72944BD30009DB7BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				019FD0BE2944D876009DB7BF /* Repository.swift */,
+				019FD0D32944F7C1009DB7BF /* RepositoryContainer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		019FD0B82944BD36009DB7BF /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				019FD0C22944DB62009DB7BF /* GitHubSearchRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		019FD0B92944BD3E009DB7BF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				019FD0C42944DDEB009DB7BF /* GitHubService.swift */,
+				019FD0C92944DE5B009DB7BF /* BackendService.swift */,
+				019FD0CB2944E17E009DB7BF /* Environment.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		019FD0C62944DE23009DB7BF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				019FD0C72944DE4A009DB7BF /* GitHubSearchAPI.swift */,
+				019FD0CD2944E270009DB7BF /* Request.swift */,
+				019FD0CF2944E27D009DB7BF /* Response.swift */,
+				019FD0D12944E5FF009DB7BF /* Operation.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +361,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				019FD0872944BC64009DB7BF /* ViewController.swift in Sources */,
+				019FD0BB2944C468009DB7BF /* SearchViewAdapter.swift in Sources */,
+				019FD0CE2944E270009DB7BF /* Request.swift in Sources */,
+				019FD0C12944DB24009DB7BF /* SearchViewModel.swift in Sources */,
+				019FD0CA2944DE5B009DB7BF /* BackendService.swift in Sources */,
+				019FD0872944BC64009DB7BF /* SearchViewController.swift in Sources */,
+				019FD0BD2944C56C009DB7BF /* SearchState.swift in Sources */,
+				019FD0D02944E27D009DB7BF /* Response.swift in Sources */,
+				019FD0D42944F7C1009DB7BF /* RepositoryContainer.swift in Sources */,
+				019FD0CC2944E17E009DB7BF /* Environment.swift in Sources */,
+				019FD0D22944E5FF009DB7BF /* Operation.swift in Sources */,
 				019FD0832944BC64009DB7BF /* AppDelegate.swift in Sources */,
 				019FD0852944BC64009DB7BF /* SceneDelegate.swift in Sources */,
+				019FD0BF2944D876009DB7BF /* Repository.swift in Sources */,
+				019FD0C82944DE4A009DB7BF /* GitHubSearchAPI.swift in Sources */,
+				019FD0C52944DDEB009DB7BF /* GitHubService.swift in Sources */,
+				019FD0C32944DB62009DB7BF /* GitHubSearchRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

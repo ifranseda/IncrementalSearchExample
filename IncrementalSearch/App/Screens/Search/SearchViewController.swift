@@ -60,6 +60,31 @@ class SearchViewController: UIViewController {
         return indicator
     }()
     
+    lazy var errorTitleLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .primaryText
+        label.font = .preferredFont(forTextStyle: .headline)
+        label.numberOfLines = 1
+        label.textAlignment = .center
+        return label
+    }()
+    
+    lazy var errorDescriptionLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .primaryText
+        label.font = .preferredFont(forTextStyle: .body)
+        label.numberOfLines = 4
+        label.textAlignment = .center
+        return label
+    }()
+    
+    lazy var errorStackView: UIStackView = {
+        let stackview = UIStackView()
+        stackview.axis = .vertical
+        stackview.layoutMargins = .init(top: 8, left: 8, bottom: 8, right: 8)
+        return stackview
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -80,6 +105,11 @@ class SearchViewController: UIViewController {
         view.addSubview(collectionView)
         
         view.addSubview(loadingIndicator)
+        
+        view.addSubview(errorStackView)
+        errorStackView.translatesAutoresizingMaskIntoConstraints = false
+        errorStackView.addArrangedSubview(errorTitleLabel)
+        errorStackView.addArrangedSubview(errorDescriptionLabel)
     }
     
     private func setLayoutConstraints() {
@@ -100,6 +130,11 @@ class SearchViewController: UIViewController {
             loadingIndicator.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor),
             loadingIndicator.widthAnchor.constraint(equalToConstant: 28),
             loadingIndicator.heightAnchor.constraint(equalToConstant: 28),
+            
+            errorStackView.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor),
+            errorStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+            errorStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+            errorStackView.heightAnchor.constraint(greaterThanOrEqualToConstant: 100)
         ])
     }
 }
@@ -115,6 +150,7 @@ extension SearchViewController: UICollectionViewDelegate {
 extension SearchViewController: SearchViewModelDelegate {
     func viewModel(_ viewModel: SearchViewModel, stateDidChange state: SearchState) {
         viewAdapter.update(with: state)
+        errorStackView.isHidden = true
         
         switch state {
         case .loading:
@@ -125,9 +161,12 @@ extension SearchViewController: SearchViewModelDelegate {
             loadingIndicator.stopAnimating()
             break
             
-        case .failed(let error):
+        case .failed(_):
             loadingIndicator.stopAnimating()
-            debugPrint(error)
+            
+            errorStackView.isHidden = false
+            errorTitleLabel.text = "Error"
+            errorDescriptionLabel.text = viewModel.failureMessage()
         }
     }
 }

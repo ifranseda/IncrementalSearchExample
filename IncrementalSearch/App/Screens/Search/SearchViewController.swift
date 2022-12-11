@@ -12,9 +12,8 @@ class SearchViewController: UIViewController {
     let viewModel: SearchViewModel = SearchViewModel()
     
     lazy var viewAdapter: SearchViewAdapter = {
-        let resultCellRegistration = UICollectionView.CellRegistration<UICollectionViewCell, Repository> { cell, _, collection in
-//            cell.configure(using: collection)
-//            cell.delegate = self
+        let resultCellRegistration = UICollectionView.CellRegistration<SearchItemCell, Repository> { cell, _, item in
+            cell.configure(using: item)
         }
 
         return SearchViewAdapter(collectionView) { collectionView, indexPath, item in
@@ -30,14 +29,18 @@ class SearchViewController: UIViewController {
     }()
     
     lazy var collectionViewLayout: UICollectionViewCompositionalLayout = {
-        let sectionProvider: UICollectionViewCompositionalLayoutSectionProvider = { section, environment in
-            return nil
+        let sectionLayoutProvider: UICollectionViewCompositionalLayoutSectionProvider = { _, _ in
+            let layoutSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(100))
+            let item = NSCollectionLayoutItem(layoutSize: layoutSize)
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: layoutSize, subitems: [item])
+
+            return NSCollectionLayoutSection(group: group)
         }
         
         let configuration = UICollectionViewCompositionalLayoutConfiguration()
         configuration.contentInsetsReference = .readableContent
         
-        return UICollectionViewCompositionalLayout(sectionProvider: sectionProvider, configuration: configuration)
+        return UICollectionViewCompositionalLayout(sectionProvider: sectionLayoutProvider, configuration: configuration)
     }()
     
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
@@ -53,13 +56,22 @@ class SearchViewController: UIViewController {
         
         viewModel.delegate = self
 
-        searchBar.delegate = self
-        view.addSubview(searchBar)
-        
+        addComponents()
         setLayoutConstraints()
     }
     
-    func setLayoutConstraints() {
+    private func addComponents() {
+        searchBar.delegate = self
+        view.addSubview(searchBar)
+
+        collectionView.dataSource = viewAdapter.dataSource
+        collectionView.delegate = self
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(collectionView)
+    }
+    
+    private func setLayoutConstraints() {
         let safeArea = view.layoutMarginsGuide
         
         NSLayoutConstraint.activate([
@@ -67,18 +79,35 @@ class SearchViewController: UIViewController {
             searchBar.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
             searchBar.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
             searchBar.heightAnchor.constraint(equalToConstant: 44),
+            collectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 16),
+            collectionView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
         ])
+    }
+}
+
+extension SearchViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let item = viewModel.resultItem(for: indexPath) {
+            debugPrint(">>> \(item)")
+        }
     }
 }
 
 extension SearchViewController: SearchViewModelDelegate {
     func viewModel(_ viewModel: SearchViewModel, stateDidChange state: SearchState) {
+        viewAdapter.update(with: state)
+        
         switch state {
-        case .idle, .loading:
+        case .idle:
             break
             
-        case .loaded(let results):
-            debugPrint(results.map { $0.fullName })
+        case .loading:
+            break
+            
+        case .loaded(_):
+            break
             
         case .failed(let error):
             debugPrint(error)

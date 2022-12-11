@@ -31,6 +31,7 @@
 		019FD0D42944F7C1009DB7BF /* RepositoryContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0D32944F7C1009DB7BF /* RepositoryContainer.swift */; };
 		019FD0D629459073009DB7BF /* URLSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0D529459073009DB7BF /* URLSessionService.swift */; };
 		019FD0D82945908E009DB7BF /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0D72945908E009DB7BF /* AlamofireService.swift */; };
+		019FD0DA29459B4C009DB7BF /* SearchItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0D929459B4C009DB7BF /* SearchItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		019FD0D32944F7C1009DB7BF /* RepositoryContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryContainer.swift; sourceTree = "<group>"; };
 		019FD0D529459073009DB7BF /* URLSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionService.swift; sourceTree = "<group>"; };
 		019FD0D72945908E009DB7BF /* AlamofireService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireService.swift; sourceTree = "<group>"; };
+		019FD0D929459B4C009DB7BF /* SearchItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,9 +179,10 @@
 		019FD0B52944BCDE009DB7BF /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				019FD0862944BC64009DB7BF /* SearchViewController.swift */,
-				019FD0BA2944C468009DB7BF /* SearchViewAdapter.swift */,
+				019FD0D929459B4C009DB7BF /* SearchItemCell.swift */,
 				019FD0BC2944C56C009DB7BF /* SearchState.swift */,
+				019FD0BA2944C468009DB7BF /* SearchViewAdapter.swift */,
+				019FD0862944BC64009DB7BF /* SearchViewController.swift */,
 				019FD0C02944DB24009DB7BF /* SearchViewModel.swift */,
 			);
 			path = Search;
@@ -376,6 +379,7 @@
 				019FD0BD2944C56C009DB7BF /* SearchState.swift in Sources */,
 				019FD0D02944E27D009DB7BF /* Response.swift in Sources */,
 				019FD0D42944F7C1009DB7BF /* RepositoryContainer.swift in Sources */,
+				019FD0DA29459B4C009DB7BF /* SearchItemCell.swift in Sources */,
 				019FD0CC2944E17E009DB7BF /* Environment.swift in Sources */,
 				019FD0D82945908E009DB7BF /* AlamofireService.swift in Sources */,
 				019FD0D22944E5FF009DB7BF /* Operation.swift in Sources */,

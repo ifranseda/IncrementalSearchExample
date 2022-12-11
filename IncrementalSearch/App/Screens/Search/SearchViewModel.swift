@@ -69,6 +69,14 @@ class SearchViewModel {
         
         return repositories.first(where: { $0.id == id })
     }
+    
+    func resultItem(for indexPath: IndexPath) -> Repository? {
+        guard case .loaded(let repositories) = state else {
+            return nil
+        }
+
+        return repositories[indexPath.item]
+    }
 
     func failureMessage() -> String {
         guard case .failed(let message) = state else { return "" }

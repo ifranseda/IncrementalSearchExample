@@ -51,6 +51,15 @@ class SearchViewController: UIViewController {
         return searchBar
     }()
     
+    lazy var loadingIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.color = UIColor.gray
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.hidesWhenStopped = true
+        indicator.stopAnimating()
+        return indicator
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,6 +78,8 @@ class SearchViewController: UIViewController {
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(collectionView)
+        
+        view.addSubview(loadingIndicator)
     }
     
     private func setLayoutConstraints() {
@@ -79,10 +90,16 @@ class SearchViewController: UIViewController {
             searchBar.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
             searchBar.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
             searchBar.heightAnchor.constraint(equalToConstant: 44),
+            
             collectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 16),
             collectionView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+            
+            loadingIndicator.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor),
+            loadingIndicator.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor),
+            loadingIndicator.widthAnchor.constraint(equalToConstant: 28),
+            loadingIndicator.heightAnchor.constraint(equalToConstant: 28),
         ])
     }
 }
@@ -100,16 +117,16 @@ extension SearchViewController: SearchViewModelDelegate {
         viewAdapter.update(with: state)
         
         switch state {
-        case .idle:
-            break
-            
         case .loading:
+            loadingIndicator.startAnimating()
             break
-            
-        case .loaded(_):
+
+        case .idle, .loaded(_):
+            loadingIndicator.stopAnimating()
             break
             
         case .failed(let error):
+            loadingIndicator.stopAnimating()
             debugPrint(error)
         }
     }

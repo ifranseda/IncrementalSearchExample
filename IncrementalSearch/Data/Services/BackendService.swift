@@ -8,6 +8,8 @@
 import Foundation
 
 protocol BackendService {
+    var urlSession: URLSession { get }
+    
     func perform<R: Decodable>(_ operation: any Operation) async throws -> Result<R, Error>
 }
 
@@ -21,7 +23,7 @@ extension BackendService {
             return .failure(APIError.invalidRequest)
         }
         
-        guard let response = try? await URLSession.shared.data(for: urlRequest) else {
+        guard let response = try? await urlSession.data(for: urlRequest) else {
             return .failure(APIError.requestCancelled)
         }
         

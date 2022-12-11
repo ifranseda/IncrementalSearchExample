@@ -29,6 +29,8 @@
 		019FD0D02944E27D009DB7BF /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0CF2944E27D009DB7BF /* Response.swift */; };
 		019FD0D22944E5FF009DB7BF /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0D12944E5FF009DB7BF /* Operation.swift */; };
 		019FD0D42944F7C1009DB7BF /* RepositoryContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0D32944F7C1009DB7BF /* RepositoryContainer.swift */; };
+		019FD0D629459073009DB7BF /* URLSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0D529459073009DB7BF /* URLSessionService.swift */; };
+		019FD0D82945908E009DB7BF /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FD0D72945908E009DB7BF /* AlamofireService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		019FD0CF2944E27D009DB7BF /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		019FD0D12944E5FF009DB7BF /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		019FD0D32944F7C1009DB7BF /* RepositoryContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryContainer.swift; sourceTree = "<group>"; };
+		019FD0D529459073009DB7BF /* URLSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionService.swift; sourceTree = "<group>"; };
+		019FD0D72945908E009DB7BF /* AlamofireService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,9 +216,11 @@
 		019FD0B92944BD3E009DB7BF /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				019FD0C42944DDEB009DB7BF /* GitHubService.swift */,
 				019FD0C92944DE5B009DB7BF /* BackendService.swift */,
 				019FD0CB2944E17E009DB7BF /* Environment.swift */,
+				019FD0C42944DDEB009DB7BF /* GitHubService.swift */,
+				019FD0D529459073009DB7BF /* URLSessionService.swift */,
+				019FD0D72945908E009DB7BF /* AlamofireService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -364,12 +370,14 @@
 				019FD0BB2944C468009DB7BF /* SearchViewAdapter.swift in Sources */,
 				019FD0CE2944E270009DB7BF /* Request.swift in Sources */,
 				019FD0C12944DB24009DB7BF /* SearchViewModel.swift in Sources */,
+				019FD0D629459073009DB7BF /* URLSessionService.swift in Sources */,
 				019FD0CA2944DE5B009DB7BF /* BackendService.swift in Sources */,
 				019FD0872944BC64009DB7BF /* SearchViewController.swift in Sources */,
 				019FD0BD2944C56C009DB7BF /* SearchState.swift in Sources */,
 				019FD0D02944E27D009DB7BF /* Response.swift in Sources */,
 				019FD0D42944F7C1009DB7BF /* RepositoryContainer.swift in Sources */,
 				019FD0CC2944E17E009DB7BF /* Environment.swift in Sources */,
+				019FD0D82945908E009DB7BF /* AlamofireService.swift in Sources */,
 				019FD0D22944E5FF009DB7BF /* Operation.swift in Sources */,
 				019FD0832944BC64009DB7BF /* AppDelegate.swift in Sources */,
 				019FD0852944BC64009DB7BF /* SceneDelegate.swift in Sources */,

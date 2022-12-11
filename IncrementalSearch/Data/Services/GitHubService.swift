@@ -7,4 +7,4 @@
 
 import Foundation
 
-class GitHubService: BackendService { }
+class GitHubService: URLSessionService { }
